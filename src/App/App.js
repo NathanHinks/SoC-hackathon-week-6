@@ -10,6 +10,7 @@ function App() {
   const [isPlayerXTurn, setPlayerXTurn] = useState(true);
   // board state
   const [board, setBoard] = useState(startBoard);
+  //winner variable - reset each time someone plays
 
   // function that takes in index and chages content of square
   // takes in index that corresponds to which button (0 to 8)
@@ -32,9 +33,34 @@ function App() {
 
     // set board to that board copy
     setBoard(boardCopy);
+    //if checkWinner() !== null carry on....
+    //else {
+    // STOP PLAY 
+    //}
+
     // then swap the player using state above
     setPlayerXTurn(!isPlayerXTurn)
   }
+
+  //GET WINNNER
+
+  //takes in board array
+
+  //array of possible wins each win will be an array eg: [1, 2, 3]
+
+  //loop over that array
+    //for each possible win
+  // [1, 2, 3]
+  // wins.forEach(win => ) 
+  // destructure array
+  //const [a, b, c] = win
+  //if statement to check if boardArray indexes for a, b and c are the same. eg all "X"
+    //if boardArray[a] !== null
+  // and boardArray[a] === b and c
+    //if it is, return the winner
+  
+  //if not do nothing
+  //return null
 
   
   return (
