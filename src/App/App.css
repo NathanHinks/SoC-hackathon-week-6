@@ -1,8 +1,9 @@
 :root {
-  --main-bg: black;
-  --game-bg: gray;
+  --main-bg: #253D5B;
+  --game-bg: #34435E;
   --font-color: white;
-  --border-color: blue;
+  --hover: #b0b1b4d3;
+  --border-color: #969696;
   --main-font: 'Kalam', cursive;
 }
 
@@ -37,12 +38,12 @@ button {
 }
 
 button:hover{
+  background-color: var(--hover);
  opacity: 1;
 }
 
 button:focus{
   outline: none;
-  border: none;
 }
 
 .board-display-container {
@@ -54,4 +55,16 @@ button:focus{
   display: grid;
   grid-template-columns: 200px 200px 200px;
   grid-template-rows: 200px 200px 200px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.reset-btn {
+  background-color: white;
+  color: var(--main-bg);
+  border-radius: 20% 40%;
+  font-size: 50px;
+  height: 100px;
+  width: 300px;
+  margin: auto;
 }

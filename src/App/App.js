@@ -9,7 +9,8 @@ function App() {
 	const [ isPlayerXTurn, setPlayerXTurn ] = useState(true);
 	// board state
   const [ board, setBoard ] = useState(startBoard);
-  const [ winnerDisplay, setWinnerDisplay] = useState("")
+  const [ winnerDisplay, setWinnerDisplay] = useState("Our Tic Tac Toe Game")
+  const winner = checkWinner(board);
   
 	//winner variable - reset each time someone plays
 	// function that takes in index and chages content of square
@@ -17,8 +18,6 @@ function App() {
 	//this happens on button click
   function fillSquare(index) {
     
-    const winner = checkWinner(board);
-    console.log(winner)
 		// make a copy of board (index)
 		const boardCopy = [ ...board ];
 		//check for winner and if board square is empty
@@ -35,15 +34,13 @@ function App() {
 			}
     }
 		//if winner
-    if (winner !== null) {
-      setWinnerDisplay("help") //need to appear when the person actually wins
+		if (winner !== null) {
+      setWinnerDisplay("The winner is: " + winner)
       return;
     }
-
 		// set board to that board copy
 		setBoard(boardCopy);
 		// STOP PLAY
-		//}
 		// then swap the player using state above
 		setPlayerXTurn(!isPlayerXTurn);
 	}
@@ -78,17 +75,21 @@ function App() {
 			//if it is, return the winner
 			if (boardArray[a] !== null && boardArray[a] === boardArray[b] && boardArray[a] === boardArray[c]) {
         currentWinner = boardArray[a];
-        // setWinnerDisplay("help")
 			}
     })
-    
+
     return currentWinner;
-	}
+  }
+  
+  function handleReset() {
+    const resetBoard = [...startBoard];
+    setBoard(resetBoard);
+  }
 
 	return (
 		//PROPS TO SEND = fillSquare, board
 		<div className='App'>
-			<Board fillSquare={fillSquare} winnerDisplay = {winnerDisplay} board={board}/>
+      <Board fillSquare={fillSquare} winnerDisplay={winnerDisplay} board={board} handleReset={handleReset}/>
 		</div>
 	);
 }
