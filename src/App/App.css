@@ -17,7 +17,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+.current-player {
+  line-height: 1.2;
+  font-size: 50px;
+  margin: 20px auto;
+  border-bottom: 1px solid white;
+  border-radius: 10%;
+}
 .App {
   text-align: center;
 }
@@ -67,4 +73,7 @@ button:focus{
   height: 100px;
   width: 300px;
   margin: auto;
+}
+.reset-btn:hover{
+  transform: scale(1.15);
 }

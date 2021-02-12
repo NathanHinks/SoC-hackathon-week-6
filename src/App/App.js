@@ -9,7 +9,7 @@ function App() {
 	const [ isPlayerXTurn, setPlayerXTurn ] = useState(true);
 	// board state
   const [ board, setBoard ] = useState(startBoard);
-  const [ winnerDisplay, setWinnerDisplay] = useState("Our Tic Tac Toe Game")
+  const [ winnerDisplay, setWinnerDisplay] = useState("")
   const winner = checkWinner(board);
   
 	//winner variable - reset each time someone plays
@@ -34,15 +34,16 @@ function App() {
 			}
     }
 		//if winner
-		if (winner !== null) {
-      setWinnerDisplay("The winner is: " + winner)
-      return;
-    }
 		// set board to that board copy
 		setBoard(boardCopy);
 		// STOP PLAY
 		// then swap the player using state above
 		setPlayerXTurn(!isPlayerXTurn);
+    
+    if (winner !== null) {
+      setWinnerDisplay("The winner is: " + winner)
+      return;
+    }
 	}
 
 	//GET WINNNER
@@ -75,7 +76,8 @@ function App() {
 			//if it is, return the winner
 			if (boardArray[a] !== null && boardArray[a] === boardArray[b] && boardArray[a] === boardArray[c]) {
         currentWinner = boardArray[a];
-			}
+			//alert(`${currentWinner} wins!!!!`)
+      }
     })
 
     return currentWinner;
@@ -84,6 +86,7 @@ function App() {
   function handleReset() {
     const resetBoard = [...startBoard];
     setBoard(resetBoard);
+    setWinnerDisplay("");
   }
 
 	return (
