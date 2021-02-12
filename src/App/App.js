@@ -40,7 +40,7 @@ function App() {
   return (
     //PROPS TO SEND = fillSquare, board
     <div className="App">
-      <Board />  
+      <Board fillSquare = {fillSquare} board = {board}/>  
     </div>
   );
 }
