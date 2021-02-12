@@ -1,79 +1,29 @@
 :root {
-  --main-bg: #253D5B;
-  --game-bg: #34435E;
-  --font-color: white;
-  --hover: #b0b1b4d3;
   --border-color: #969696;
+  --font-color: white;
+  --game-bg: #34435E;
+  --hover: #4d4d50d3;
+  --main-bg: #253D5B;
   --main-font: 'Kalam', cursive;
+}
+*{
+  box-sizing: border-box;
 }
 
 body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   background-color: var(--main-bg);
   color: var(--font-color);
-  margin: 0;
   font-family: var(--main-font);
   font-size: 100px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.current-player {
-  line-height: 1.2;
-  font-size: 50px;
-  margin: 20px auto;
-  border-bottom: 1px solid white;
-  border-radius: 10%;
-}
-.App {
+  margin: 0;
   text-align: center;
 }
+
+/*inherited styles*/
 button {
-  font-family: inherit;
   color: inherit;
+  font-family: inherit;
   font-size: inherit;
-
-}
-button {
-  background-color: var(--game-bg);
-  border: 1px solid var(--border-color);
-  height: 200px;
-  width: 200px;
-  transition: .15s all;
-  opacity: .8;
-
-}
-
-button:hover{
-  background-color: var(--hover);
- opacity: 1;
-}
-
-button:focus{
-  outline: none;
-}
-
-.board-display-container {
-   margin: auto;
-   width: 700px;
-}
-
-.board {
-  display: grid;
-  grid-template-columns: 200px 200px 200px;
-  grid-template-rows: 200px 200px 200px;
-  margin-top: 20px;
-  justify-content: center;
-}
-
-.reset-btn {
-  background-color: white;
-  color: var(--main-bg);
-  border-radius: 20% 40%;
-  font-size: 50px;
-  height: 100px;
-  width: 300px;
-  margin: auto;
-}
-.reset-btn:hover{
-  transform: scale(1.15);
 }

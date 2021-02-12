@@ -1,5 +1,6 @@
 import React from 'react';
 import Square from '../Square';
+import './board.css';
 
 //PROPS this needs fillsquares, board
 function Board({ fillSquare, board, winner, isPlayerXTurn, handleReset }) {

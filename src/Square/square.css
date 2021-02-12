@@ -1,0 +1,35 @@
+button {
+    animation: animate 2s ease-in-out;
+	background-color: var(--game-bg);
+	border: 1px solid var(--border-color);
+	height: 100%;
+	opacity: .8;
+	transition: .15s all;
+	width: 100%;
+}
+
+button:hover {
+	background-color: var(--hover);
+	opacity: 1;
+}
+
+button:focus {
+	outline: none;
+}
+
+button:focus{
+  
+}
+
+
+/*animation on render*/
+@keyframes animate {
+    0% {
+        color: black;
+        opacity: 0;
+    }
+    100% {
+        color: white;
+        opacity: 1;
+    }
+}
