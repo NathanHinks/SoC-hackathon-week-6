@@ -45,23 +45,47 @@ function App() {
   //GET WINNNER
 
   //takes in board array
-
+function checkWinner(boardArray){
   //array of possible wins each win will be an array eg: [1, 2, 3]
-
+  const possibleWins = [
+		[0, 1, 2],
+		[3, 4, 5],
+		[6, 7, 8],
+		[0, 3, 6],
+		[1, 4, 7],
+		[2, 5, 8],
+		[0, 4, 8],
+		[2, 4, 6],
+	];
+  
   //loop over that array
     //for each possible win
   // [1, 2, 3]
   // wins.forEach(win => ) 
-  // destructure array
+  possibleWins.forEach(win => {
+    // destructure array
   //const [a, b, c] = win
-  //if statement to check if boardArray indexes for a, b and c are the same. eg all "X"
+    const [a, b, c] = win
+    //if statement to check if boardArray indexes for a, b and c are the same. eg all "X"
     //if boardArray[a] !== null
   // and boardArray[a] === b and c
     //if it is, return the winner
+    if(boardArray[a] !== null && boardArray[a] === boardArray[b] && boardArray[a] === boardArray[c]){
+      return boardArray[a]
+    }
+    else{
+      //if not do nothing
+      //return null
+      return null
+    }
+  }
+    
+    )
   
-  //if not do nothing
-  //return null
-
+  
+  
+  
+}
   
   return (
     //PROPS TO SEND = fillSquare, board
