@@ -24,3 +24,13 @@ button {
   width: 200px;
 }
 
+.board-display-container {
+   margin: auto;
+   width: 700px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 200px 200px 200px;
+}
