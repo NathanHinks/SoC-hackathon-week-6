@@ -9,7 +9,7 @@ function App() {
 	const [ isPlayerXTurn, setPlayerXTurn ] = useState(true);
 	// board state
   const [ board, setBoard ] = useState(startBoard);
-  const [ winnerDisplay, setWinnerDisplay] = useState("test")
+  const [ winnerDisplay, setWinnerDisplay] = useState("")
   
 	//winner variable - reset each time someone plays
 	// function that takes in index and chages content of square
@@ -36,7 +36,7 @@ function App() {
     }
 		//if winner
     if (winner !== null) {
-      setWinnerDisplay("help")
+      setWinnerDisplay("help") //need to appear when the person actually wins
       return;
     }
 

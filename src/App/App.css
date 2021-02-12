@@ -24,12 +24,25 @@ button {
   font-family: inherit;
   color: inherit;
   font-size: inherit;
+
 }
 button {
   background-color: var(--game-bg);
   border: 1px solid var(--border-color);
   height: 200px;
   width: 200px;
+  transition: .15s all;
+  opacity: .8;
+
+}
+
+button:hover{
+ opacity: 1;
+}
+
+button:focus{
+  outline: none;
+  border: none;
 }
 
 .board-display-container {
