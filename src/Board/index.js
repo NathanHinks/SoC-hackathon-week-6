@@ -1,8 +1,11 @@
 import React, {useState} from "react";
 import Square from "../Square";
 
+//PROPS this needs fillsquares, board
 function Board() {
-    return <div> <div className = "current-player"> 
+    // MAKE 9 squares by mapping over board
+        //each squares PROPS: fillsquares, key(so React doesn't shout at us), index
+    return <div className="board-display-container"> <div className = "current-player"> 
         current player goes here
         </div>
         <div className = "borad-row row-1" > 
@@ -19,7 +22,7 @@ function Board() {
         <Square index = {6}/>
         <Square index = {7}/>
         <Square index = {8}/>
-        </div>
+        </div> 
         </div>
     
 }
