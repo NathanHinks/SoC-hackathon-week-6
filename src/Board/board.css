@@ -27,8 +27,11 @@
 	height: 75px;
 	width: 200px;
 	margin: 0px auto;
+	transition: .25s all;
 }
-.reset-btn:hover {
+.reset-btn:hover,
+.reset-btn:focus {
 	background-color: white;
+	cursor: pointer;
 	transform: scale(1.15);
 }
