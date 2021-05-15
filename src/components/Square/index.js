@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { takeTurn } from '../redux/actions';
+import { takeTurn } from '../../redux/actions';
 
 
 const Square = ({ item, index }) => {

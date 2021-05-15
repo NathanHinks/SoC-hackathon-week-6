@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { reset } from '../redux/actions';
+import { reset } from '../../redux/actions';
 import { resetBtn } from './resetBtn.module.css';
 
 const ResetBtn = () => {
