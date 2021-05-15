@@ -1,7 +1,14 @@
-import checkWinner from '../libs/checkWinner';
-import fillSquare from '../libs/fillSquare';
+import checkWinner from '../dependencies/checkWinner';
+import fillSquare from '../dependencies/fillSquare';
+import { startBoard } from '../dependencies/gameVars';
 
-export const randomizeFirstPlayer = () => Math.random() >= 0.5;
+const randomizeFirstPlayer = () => Math.random() >= 0.5;
+
+export const getInitialState = () => ({
+  board: startBoard,
+  isPlayerXTurn: randomizeFirstPlayer(),
+  winner: null
+})
 
 export const takeTurn = (state, index) => {
   const newBoard = fillSquare(state, index);

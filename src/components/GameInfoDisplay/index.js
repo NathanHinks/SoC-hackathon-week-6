@@ -1,15 +1,12 @@
 import { useSelector } from 'react-redux';
+import getDisplayText from '../../dependencies/getDisplayText';
 import {gameInfo} from "./gameInfoDisplay.module.css"
 const GameInfoDisplay = () => {
-  const { winner, isPlayerXTurn } = useSelector((state) => state);
-
+  const state = useSelector((state) => state);
+  const displayText = getDisplayText(state);
   return (
     <div className={gameInfo}>
-      {winner ? (
-        `Winner is: ${winner}`
-      ) : (
-        `Next Player: ${isPlayerXTurn ? 'X' : 'O'}`
-      )}
+      {displayText}
     </div>
   );
 };

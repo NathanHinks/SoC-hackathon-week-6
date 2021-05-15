@@ -1,11 +1,6 @@
-import { startBoard } from '../libs/gameVars';
-import { randomizeFirstPlayer, takeTurn } from './utils';
+import { getInitialState, takeTurn } from './utils';
 
-const initialState = {
-  board: startBoard,
-  isPlayerXTurn: randomizeFirstPlayer(),
-  winner: null,
-};
+const initialState = getInitialState();
 
 const gameReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -18,10 +13,7 @@ const gameReducer = (state = initialState, action) => {
         isPlayerXTurn: !state.isPlayerXTurn,
       };
     case 'RESET':
-      return {
-        ...initialState,
-        isPlayerXTurn: randomizeFirstPlayer(),
-      };
+      return getInitialState();
     default:
       return state;
   }

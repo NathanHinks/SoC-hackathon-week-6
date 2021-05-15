@@ -1,7 +1,7 @@
 import {possibleWins} from './gameVars';
 
 const checkWinner = (boardArray) => {
-  let currentWinner = null;
+  let newWinner = null;
 
   possibleWins.forEach((win) => {
     const [a, b, c] = win;
@@ -10,11 +10,11 @@ const checkWinner = (boardArray) => {
       boardArray[a] === boardArray[b] &&
       boardArray[a] === boardArray[c]
     ) {
-      currentWinner = boardArray[a];
+      newWinner = boardArray[a];
     }
   });
   
-  return currentWinner;
+  return newWinner;
 };
 
 export default checkWinner
