@@ -1,0 +1,16 @@
+.resetBtn {
+	background-color: white;
+	color: var(--main-bg);
+	border-radius: 20% 40%;
+	font-size: 30px;
+	height: 75px;
+	width: 200px;
+	margin: 0px auto;
+	transition: .25s all;
+}
+.resetBtn:hover,
+.resetBtn:focus {
+	background-color: white;
+	cursor: pointer;
+	transform: scale(1.15);
+}
