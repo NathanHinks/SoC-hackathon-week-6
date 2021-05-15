@@ -1,23 +1,28 @@
 import React from 'react';
 import Square from '../Square';
-import './board.css';
 
-//PROPS this needs fillsquares, board
-function Board({ fillSquare, board, winner, isPlayerXTurn, handleReset }) {
+import {useSelector} from "react-redux"
+
+import './board.css';
+import ResetBtn from '../ResetBtn';
+
+//{ fillSquare, board, winner, isPlayerXTurn, handleReset }
+function Board() {
+	const {board, isPlayerXTurn, winner} = useSelector(state => state);
+	const fillSquare = () => console.log("hi")
+
+	console.log(board)
 	return (
 		<div className='board-display-container'>
-			{' '}
 			<div className='current-player'>
                 {winner ?
                     `Winner is: ${winner}` :
                     `Next Player: ${isPlayerXTurn ? 'X' : 'O'}`}
 			</div>
 			<div className='board'>
-				{board.map((item, index) => <Square index={index} fillSquare={fillSquare} key={index} item={item} />)}
+				{board.map((item, index) => <Square index={index} key={index} item={item} />)}
 			</div>
-			<button className='reset-btn' onClick={handleReset}>
-				Reset
-			</button>
+			<ResetBtn/>
 		</div>
 	);
 }
